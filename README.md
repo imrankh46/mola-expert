@@ -20,20 +20,25 @@ Built on **Hugging Face Transformers** + **TRL SFTTrainer**.
 git clone https://github.com/yourname/mola
 cd mola
 pip install -r requirements.txt
-
+```
 ## ⚡ Training Example
 ```bash
 python mola_test.py \
   --model Qwen/Qwen2.5-0.5B-Instruct \
   --output_dir ./mola-qwen25-sft \
   --target_modules o_proj,down_proj \
-  --rank 32 --alpha 64 \
-  --top_k 2 --experts 2,4,6,8 \
-  --lr 5e-5 --epochs 2 \
-  --batch 1 --grad_accum 8 \
-  --max_len 1024 --fp16 \
+  --rank 32 \
+  --alpha 64 \
+  --top_k 2 \
+  --experts 2,4,6,8 \
+  --lr 1e-4 \
+  --epochs 2 \
+  --batch 2 \
+  --grad_accum 8 \
+  --max_len 1024 \
+  --fp16 \
   --sample_size 10000
-
+```
 
 ## 📊 Dataset
 
