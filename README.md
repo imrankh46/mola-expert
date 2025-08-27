@@ -4,24 +4,24 @@ Implementation of **MoLA (Mixture of LoRA Experts)** for efficient LLM fine-tuni
 Extends LoRA by attaching multiple experts per layer and routing tokens dynamically.  
 Built on **Hugging Face Transformers** + **TRL SFTTrainer**.
 
----
 
-## 🚀 Features
+
+## Features
 - Multiple LoRA experts per layer (`--experts 2,4,6,8` or fixed).
 - Token routing with configurable `--top_k`.
 - Supports **fp16/bf16** training (Colab/GPUs).
 - ChatML dataset formatting for instruction tuning.
 - Example: **Qwen2.5-Instruct** on financial translation dataset.
 
----
 
-## 📦 Installation
+
+## Installation
 ```bash
 git clone https://github.com/yourname/mola
 cd mola
 pip install -r requirements.txt
 ```
-## ⚡ Training Example
+## Training Example
 ```bash
 python mola_test.py \
   --model Qwen/Qwen2.5-0.5B-Instruct \
@@ -40,7 +40,7 @@ python mola_test.py \
   --sample_size 10000
 ```
 
-## 📊 Dataset
+## Dataset
 
 Uses FINGU-AI/Translated_Finance_100k_plus_v4_clean
 with ChatML instruction formatting for supervised fine-tuning.
